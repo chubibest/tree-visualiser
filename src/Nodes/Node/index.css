@@ -1,0 +1,14 @@
+.circle {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    border: 1px solid var(--edges);
+    position: relative;
+}
+
+.circle p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

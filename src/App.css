@@ -1,0 +1,118 @@
+body {
+    --dark: #262626;
+    --edges: #ccc;
+    --error: #ee143e;
+    --font: #000;
+    --font2: #fff;
+    --lively1: #119a11;
+    }
+
+body.dark {
+    background-color: var(--dark);
+    --font: var(--font2);
+}
+
+.App {
+    /* Fonts */
+    --normal: 1.25vw;
+
+    height: fit-content;
+    min-height: 100vh;
+    font-size: var(--normal);
+    color: var(--font);
+    padding: 2vw;
+}
+
+.App a {
+    text-decoration: none;
+    color: inherit;
+}
+form div {
+    display: flex;
+    align-items: flex-end;
+}
+
+form * {
+    align-self: flex-start;
+}
+
+button {
+    text-align: center;
+    all: unset;
+    cursor: pointer;
+    background: var(--lively1);
+    color: var(--font2);
+    outline: none;
+    border-radius: 3%;
+    margin-left: 2vw;
+    padding: 0.4vw 2.8vw;
+}
+
+button[disabled], input[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+input {
+    all: unset;
+    width: 50%;
+
+
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: var(--edges);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+input:-webkit-autofill{
+    -webkit-text-fill-color: var(--font) !important;
+}
+
+p {
+    margin: 0;
+}
+
+p.instructions {
+    margin-top: 3vw;
+}
+
+@media screen and (max-width: 990px) {
+    .App {
+        --normal: 3.08vw;
+        --large: 5.0vw;
+    }
+
+    form * {
+        align-self: center;
+    }
+
+    form h1 {
+        margin: 15vw auto 30.5vw;
+    }
+    button {
+        margin: 50vw auto 10vw;
+        padding: 2.2vw 8vw;
+    }
+}
+
+.error {
+    color: var(--error);
+    display: inline-block;
+    margin-top: .5vw;
+}

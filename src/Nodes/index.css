@@ -1,0 +1,10 @@
+.nodes {
+    display: flex;
+    flex-direction: column;
+    padding: 4vw 0;
+}
+
+.nodes .level {
+    margin: auto;
+}
+    
