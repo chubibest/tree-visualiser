@@ -6,6 +6,7 @@ import Nodes from './Nodes'
 import DarkMode from './DarkMode'
 import { useState } from 'react';
 import prepareNodes, { LevelsMap } from './utils/prepareNodes';
+import Footer from './Footer';
 
 function Index() {
   const [nodes, setNodes] = useState<LevelsMap>()
@@ -19,18 +20,20 @@ function Index() {
               nodes: Yup.string().required('Required')
           })}
           onSubmit={async (values, { setSubmitting, setErrors }) => {
-              const { nodes: _nodes } = values
-              const _nodesArr = _nodes.split(',')
-              if (_nodesArr.length > 7) {
-                  setErrors({ nodes: 'Max 7 nodes' })
-                  setSubmitting(false)
-                  return
-              }
-              if (_nodesArr.length < 1) {
-                  setErrors({ nodes: 'Min 1 node' })
-                  setSubmitting(false)
-                  return 
-              }
+            const { nodes: _nodes } = values
+            const _nodesArr = _nodes.split(',')
+            if (_nodesArr.length > 31) {
+              setErrors({ nodes: 'Max 5 Levels' })
+              setSubmitting(false)
+              return
+            }
+            
+            if (_nodesArr.length < 1) {
+              setErrors({ nodes: 'Min 1 node' })
+              setSubmitting(false)
+              return 
+            }
+
               const preparedNodes = prepareNodes(_nodesArr)
               setNodes(preparedNodes)
               setSubmitting(false)
@@ -52,6 +55,8 @@ function Index() {
       <p className='instructions'>Provide a comma separated list of values, use the string <i>null</i> to indicate empty nodes e.g 1, 2, 3</p>
 
       <Nodes nodes={nodes as LevelsMap}/>
+
+      <Footer/>
     </div>
   );
 }

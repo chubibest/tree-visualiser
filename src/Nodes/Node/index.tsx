@@ -1,12 +1,14 @@
 import './index.css'
 
 interface Props {
-    val: number
+    val: string
 }
 
-const index = ({ val }: Props) => {
+const index = ({ val: _val }: Props) => {
+    const val = _val.trim()
+    const truncatedVal = val.trim().length > 2 ? val.slice(0, 2) + '..' : val;
     return (
-        <div className='circle'><p>{val}</p></div>
+        <div className='circle'><p>{truncatedVal}</p></div>
     );
 };
 

@@ -17,7 +17,6 @@ body.dark {
     --normal: 1.25vw;
 
     height: fit-content;
-    min-height: 100vh;
     font-size: var(--normal);
     color: var(--font);
     padding: 2vw;
