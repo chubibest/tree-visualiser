@@ -15,6 +15,7 @@ const prepareNodes = (nodes: string[]): LevelsMap => {
         levelStart += nodesCount
         nodesCount *= 2
     }
+
     return levelsMap
 }
 

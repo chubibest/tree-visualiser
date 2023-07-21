@@ -1,11 +1,14 @@
+import { ObjectData } from 'gojs';
 import { LevelsMap } from '../utils/prepareNodes';
 import Node from './Node'
+import Go from '../Canvas'
 import './index.css'
 
 interface Props {
     nodes: LevelsMap | undefined
+    diagramNodes: ObjectData[]
 }
-const index = ({nodes}: Props) => {
+const index = ({nodes, diagramNodes}: Props) => {
     if (!nodes) {   return null; }
     return (
         <div className='nodes'>
@@ -28,6 +31,7 @@ const index = ({nodes}: Props) => {
                 })
 
             }
+            <Go diagramNodes={diagramNodes}/>
         </div>
     );
 };

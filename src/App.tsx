@@ -6,10 +6,12 @@ import Nodes from './Nodes'
 import DarkMode from './DarkMode'
 import { useState } from 'react';
 import prepareNodes, { LevelsMap } from './utils/prepareNodes';
+import prepareDiagramNodes from './utils/prepareDiagramNodes';
 import Footer from './Footer';
 
 function Index() {
   const [nodes, setNodes] = useState<LevelsMap>()
+  const [diagramNodes, setDiagramNodes] = useState<any>()
 
   return (
     <div className="App">
@@ -35,7 +37,11 @@ function Index() {
             }
 
               const preparedNodes = prepareNodes(_nodesArr)
+              const diagramNodes = prepareDiagramNodes(_nodesArr)
+
+              setDiagramNodes(diagramNodes)
               setNodes(preparedNodes)
+
               setSubmitting(false)
           }}
       >
@@ -54,7 +60,7 @@ function Index() {
       </Formik>
       <p className='instructions'>Provide a comma separated list of values, use the string <i>null</i> to indicate empty nodes e.g 1, 2, 3</p>
 
-      <Nodes nodes={nodes as LevelsMap}/>
+      <Nodes nodes={nodes as LevelsMap} diagramNodes={diagramNodes}/>
 
       <Footer/>
     </div>
@@ -62,6 +68,3 @@ function Index() {
 }
 
 export default Index;
-
-
-
