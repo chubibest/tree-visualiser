@@ -16,7 +16,7 @@ body.dark {
     /* Fonts */
     --normal: 1.25vw;
 
-    height: fit-content;
+    min-height: 100vh;
     font-size: var(--normal);
     color: var(--font);
     padding: 2vw;
@@ -88,7 +88,7 @@ p {
 }
 
 p.instructions {
-    margin-top: 3vw;
+    margin: 3vw 0;
 }
 
 @media screen and (max-width: 990px) {

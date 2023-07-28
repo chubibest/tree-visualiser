@@ -2,15 +2,14 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import Loader from './Loader'
 import './App.css'
-import Nodes from './Nodes'
 import DarkMode from './DarkMode'
 import { useState } from 'react';
-import prepareNodes, { LevelsMap } from './utils/prepareNodes';
+import prepareNodes, { NodesEdges } from './BinaryTreeView/prepareNodes';
 import Footer from './Footer';
+import Tree from './BinaryTreeView'
 
 function Index() {
-  const [nodes, setNodes] = useState<LevelsMap>()
-
+  const [nodesAndEdges, setNodesAndEdges] = useState<NodesEdges>()
   return (
     <div className="App">
       <DarkMode />
@@ -35,7 +34,7 @@ function Index() {
             }
 
               const preparedNodes = prepareNodes(_nodesArr)
-              setNodes(preparedNodes)
+              setNodesAndEdges(preparedNodes)
               setSubmitting(false)
           }}
       >
@@ -53,8 +52,7 @@ function Index() {
           )}
       </Formik>
       <p className='instructions'>Provide a comma separated list of values, use the string <i>null</i> to indicate empty nodes e.g 1, 2, 3</p>
-
-      <Nodes nodes={nodes as LevelsMap}/>
+      {nodesAndEdges ? <Tree nodesAndEdges={nodesAndEdges}/> : null }
 
       <Footer/>
     </div>
