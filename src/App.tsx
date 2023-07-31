@@ -21,11 +21,6 @@ function Index() {
           onSubmit={async (values, { setSubmitting, setErrors }) => {
             const { nodes: _nodes } = values
             const _nodesArr = _nodes.split(',')
-            if (_nodesArr.length > 31) {
-              setErrors({ nodes: 'Max 5 Levels' })
-              setSubmitting(false)
-              return
-            }
             
             if (_nodesArr.length < 1) {
               setErrors({ nodes: 'Min 1 node' })
