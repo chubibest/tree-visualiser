@@ -31,6 +31,18 @@ form div {
     align-items: flex-end;
 }
 
+@media screen and (max-width: 750px) {
+    form div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2vw;
+    }
+
+    div button {
+        margin-left: 0;
+    }
+}
+
 form * {
     align-self: flex-start;
 }
@@ -95,18 +107,6 @@ p.instructions {
     .App {
         --normal: 3.08vw;
         --large: 5.0vw;
-    }
-
-    form * {
-        align-self: center;
-    }
-
-    form h1 {
-        margin: 15vw auto 30.5vw;
-    }
-    button {
-        margin: 50vw auto 10vw;
-        padding: 2.2vw 8vw;
     }
 }
 

@@ -3,3 +3,11 @@ button.theme {
     right: 2vw;
     top: 2vw;
 }
+
+@media screen and (max-width: 750px) {
+    button.theme {
+        position: fixed;
+        right: 2vw;
+        top: 2vw;
+    }
+}
