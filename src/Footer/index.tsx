@@ -4,7 +4,7 @@ import './index.css';
 const index = () => {
     return (
         <div className='footer'>
-          <button>Buy me a Coffee</button>  
+          <button className='coffee'>Buy me a Coffee</button>  
           <button><a target='_blank' rel="noreferrer" href='https://github.com/chubibest/tree-visualiser' >Contribute/Issues</a></button>
         </div>
     );
