@@ -41,6 +41,10 @@ form div {
     div button {
         margin-left: 0;
     }
+
+    input {
+        font-size: 16px;
+    }
 }
 
 form * {
